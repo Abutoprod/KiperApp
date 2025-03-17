@@ -21,7 +21,7 @@ public class Controller {
     }
 
     @PostMapping("/{id}")
-    public String helloPost(@PathVariable("id") String id, @RequestBody User body) {
-        return "nome: " + body.getName() + "id:"+id;
+    public String helloPost(@PathVariable("id") String id,@RequestParam(value = "filter", defaultValue="nenhum") String filter, @RequestBody User body) {
+        return "nome: " + body.getName() + "id:"+id + filter;
     }
 }
