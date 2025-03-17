@@ -20,11 +20,8 @@ public class Controller {
         return service.hellow(" tobias");
     }
 
-    @PostMapping("")
-    public String helloPost(@RequestBody User body)
-    {
-        return "nome: "+ body.getName()+ "\n"+
-                "key: "+body.getKey();
-
+    @PostMapping("/{id}")
+    public String helloPost(@PathVariable("id") String id, @RequestBody User body) {
+        return "nome: " + body.getName() + "id:"+id;
     }
 }
